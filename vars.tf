@@ -1,4 +1,4 @@
-.
+
 variable "components" {}
 variable "ami" {}
 variable "zone_id" {}

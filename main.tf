@@ -1,4 +1,4 @@
-.
+
 module "components" {
   source              = "git::https://github.com/emmadishetti/test-module.git"
   for_each = var.components
