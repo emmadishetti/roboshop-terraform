@@ -1,7 +1,7 @@
 
 ami = "ami-03265a0778a880afb"
 security_groups = [ "sg-0f56c7274c7d31689" ]
-zone_id = [ "Z009544921RTWVTZ5968R" ]
+zone_id = "Z009544921RTWVTZ5968R"
 
 components = {
   frontend = {
