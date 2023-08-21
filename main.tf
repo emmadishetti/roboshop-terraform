@@ -1,12 +1,10 @@
 
 module "components" {
-  source              = "git::https://github.com/emmadishetti/test-module.git"
-  for_each = var.components
+  source = "git::https://github.com/emmadishetti/tf-module-vpc.git"
 
-  ami                 = var.ami
-  zone_id             = var.zone_id
-  security_groups     = var.security_groups
-  name                = each.value["name"]
-  instance_type       = each.value["instance_type"]
+  for_each = var.vpc
+
+  cidr = each.value["cidr"]
+  subnets = each.value["subnets"]
 
 }
