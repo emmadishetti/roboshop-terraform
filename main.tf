@@ -117,7 +117,7 @@ module "app" {
   tags   = var.tags
   env    = var.env
   ami             = var.ami
-  zone_id         = var.zone_id
+
   ssh_ingress_cidr = var.ssh_ingress_cidr
 
   for_each = var.apps
