@@ -97,34 +97,14 @@ module "rabbitmq" {
   source = "git::https://github.com/emmadishetti/tf-module-rabbitmq.git"
   tags   = var.tags
   env    = var.env
+  ami             = var.ami
+  zone_id         = var.zone_id
   ssh_ingress_cidr = var.ssh_ingress_cidr
 
   for_each = var.rabbitmq
+
   sg_ingress_cidr = local.app_subnets_cidr
   subnet_ids      = local.db_subnets
-  vpc_id          = local.vpc_id
-  ami             = var.ami
-  zone_id         = var.zone_id
-
-  instance_type   = each.value["instance_type"]
-
-
-}
-module "app" {
-  #depends_on = [module.docdb, module.alb, module.elasticache, module.rabbitmq, module.rds]
-  source = "git::https://github.com/emmadishetti/tf-module-app.git"
-
-  tags   = var.tags
-  env    = var.env
-  ami             = var.ami
-
-  ssh_ingress_cidr = var.ssh_ingress_cidr
-
-  for_each = var.apps
-  component = each.key
-  port      = each.value["port"]
-  sg_ingress_cidr = local.app_subnets_cidr
-  subnet_ids      = local.app_subnets
   vpc_id          = local.vpc_id
   instance_type   = each.value["instance_type"]
 
