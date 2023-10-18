@@ -34,7 +34,7 @@ tags = {
 env = "dev"
 ami = "ami-03265a0778a880afb"
 zone_id = "Z009544921RTWVTZ5968R"
-ssh_ingress_cidr =  "172.31.0.202"
+ssh_ingress_cidr =  ["172.31.0.202/16"]
 
 alb = {
   public = {
