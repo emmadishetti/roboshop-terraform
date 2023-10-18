@@ -64,21 +64,20 @@ docdb = {
 }
 rds = {
   main = {
-    rds_type            = "mysql"
-    db_port             = 3306
-    engine              = "aurora-mysql"
-    engine_family       = "aurora-mysql5.7"
-    engine_version      = "5.7.mysql_aurora.2.11.3"
+    rds_type                = "mysql"
+    db_port                 = 3306
+    engine                  = "aurora-mysql"
+    engine_family           = "aurora-mysql5.7"
+    engine_version          = "5.7.mysql_aurora.2.11.3"
     backup_retention_period = 2
     preferred_backup_window = "07:00-09:00"
-    skip_final_snapshot = true
-    instance_class      = "db.t3.small"
-    instance_count      = 1
-
+    skip_final_snapshot     = true
+    instance_class          = "db.t3.small"
+    instance_count          = 1
+  }
   }
   elasticache = {
     main = {
-
       elasticache_type            = "redis"
       port                        = 6379
       engine                      = "redis"
@@ -89,7 +88,7 @@ rds = {
 
     }
   }
-}
+
 rabbitmq = {
   main = {
     instance_type = "t3.micro"
