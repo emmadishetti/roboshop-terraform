@@ -100,10 +100,5 @@ apps = {
   frontend = {
    instance_type = "t3.micro"
     port         = 80
-
-
-
-
-
 }
 }
